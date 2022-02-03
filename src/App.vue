@@ -4,8 +4,7 @@
       <input-search @search="filterMovies" />
     </header>
     <main>
-      <main-box />
-      <div v-for="item in movies" :key="item.id">{{item.title}}</div>
+      <main-box :movies="movies" />
     </main>
   </div>
 </template>
