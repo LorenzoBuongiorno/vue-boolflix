@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <input-search />
+      <input-search @search="filterMovies" />
     </header>
     <main>
       <main-box />
@@ -26,12 +26,14 @@ export default {
   data () {
     return {
       movies: [],
-      keywordSearch: ''
+      
+
     }
   },
   methods: {
     filterMovies(keywordSearch) {
-      axios.get(`https://api.themoviedb.org/3/search/movie?language=it-IT&api_key=3800b334d89bd3d998f99ccfbfa37575&query=${keywordSearch}`).then((element) => {
+      console.log(keywordSearch);
+      axios.get('https://api.themoviedb.org/3/search/movie?language=it-IT&api_key=3800b334d89bd3d998f99ccfbfa37575&query=' + keywordSearch).then((element) => {
       this.movies = element.data.results
     })
   }
