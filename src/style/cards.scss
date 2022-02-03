@@ -6,7 +6,7 @@
     overflow:hidden;
     position: relative;
     
-    img{
+    .poster-image{
         position: absolute;
         object-fit: contain;
         width: 100%;
@@ -21,6 +21,11 @@
     .description{
         span{
             font-weight: bold;
+        }
+        .language-image{
+            margin-left: 5px;
+            width: 25px;
+            vertical-align: middle;
         }
         line-height: 40px;
         padding: 15px;

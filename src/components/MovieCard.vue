@@ -10,15 +10,15 @@
                 {{movie.original_title}}
             </div>
             <div>
-                <span>lingua:</span>
-                {{movie.original_language}}
+                <span>Lingua:</span>
+                <img class="language-image" :src="'/flags/' + movie.original_language + '.png'" alt="">
             </div>
             <div>
                 <span>Voto:</span>
                 {{movie.vote_average}}
             </div>
         </div>
-        <img :src="'https://image.tmdb.org/t/p/original' + movie.poster_path" alt="">
+        <img class="poster-image" :src="'https://image.tmdb.org/t/p/original' + movie.poster_path" alt="">
     </div>
 </template>
 
