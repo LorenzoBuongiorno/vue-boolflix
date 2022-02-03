@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <header>
-      <input-search @search="filterMovies" />
-    </header>
-    <main>
-      <main-box :movies="movies" />
-    </main>
+    <div class="background">
+      <header>
+        <input-search @search="filterMovies" />
+      </header>
+      <main>
+        <main-box :movies="movies" />
+      </main>
+    </div>
   </div>
 </template>
 
@@ -41,7 +43,25 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-
+@import 'style/main.scss';
+#app{
+    background-color: #333;
+    .background{
+    background-color: #333;
+    height: 100vh;
+      header{
+        background-color: #111;
+        height: 80px;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    
+      }
+      main{
+        display: flex;
+        justify-content: center;
+        background-color: #333;
+      }
+    }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="card-box">
         <movie-card  v-for="movie in movies" :key="movie.id" :movie="movie"/>
     </div>
 </template>
@@ -17,5 +17,10 @@ export default {
 </script>
 
 <style lang="scss">
-
+.card-box{
+    width: 1500px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 </style>

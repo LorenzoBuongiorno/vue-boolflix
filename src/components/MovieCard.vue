@@ -18,11 +18,7 @@
                 {{movie.vote_average}}
             </div>
         </div>
-        <div class="poster">
-            <div class="image-poster">
-                <img :src="'https://image.tmdb.org/t/p/original' + movie.poster_path" alt="">
-            </div>
-        </div>
+        <img :src="'https://image.tmdb.org/t/p/original' + movie.poster_path" alt="">
     </div>
 </template>
 
@@ -35,5 +31,5 @@ export default {
 </script>
 
 <style lang="scss">
-
+@import '@/style/cards.scss'
 </style>
