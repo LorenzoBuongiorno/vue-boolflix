@@ -12,6 +12,7 @@
         height: 100%;
         top: 0;
         left: 0;
+        cursor: pointer;
         &:hover{
             opacity: 0%;
             transform: scale(110%);
@@ -19,6 +20,9 @@
         }
     }
     .description{
+        .stars{
+            color: #ebcc34;
+        }
         span{
             font-weight: bold;
         }
