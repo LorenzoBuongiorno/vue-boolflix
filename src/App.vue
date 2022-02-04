@@ -39,7 +39,7 @@ export default {
         query: keywordSearch,
         api_key: this.api_key
       }
-      axios.get('https://api.themoviedb.org/3/search/movie' , {params}).then((element) => {
+      axios.get('https://api.themoviedb.org/3/search/movie?language=it-IT&' , {params}).then((element) => {
       this.movies = element.data.results
     })
   }

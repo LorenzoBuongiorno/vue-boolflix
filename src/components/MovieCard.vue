@@ -11,7 +11,8 @@
             </div>
             <div>
                 <span>Lingua:</span>
-                <img class="language-image" :src="'/flags/' + movie.original_language + '.png'" alt="">
+                <img class="language-image" :src="'/flags/' + movie.original_language + '.png'" alt=""  @load="loadImage">
+                <span v-if="!isLoaded">{{movie.original_language}}</span>
             </div>
             <div>
                 <span>Voto:</span>
@@ -26,6 +27,16 @@
 export default {
     props:{
         movie:Object
+    },
+    data() {
+        return {
+            isLoaded: false
+        }
+    },
+    methods: {
+        loadImage() {
+                this.isLoaded = true;
+            }
     }
 }
 </script>
