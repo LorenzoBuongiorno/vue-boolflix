@@ -27,6 +27,7 @@ export default {
   data () {
     return {
       movies: [],
+      api_key: '3800b334d89bd3d998f99ccfbfa37575'
       
 
     }
@@ -34,7 +35,11 @@ export default {
   methods: {
     filterMovies(keywordSearch) {
       console.log(keywordSearch);
-      axios.get('https://api.themoviedb.org/3/search/movie?language=it-IT&api_key=3800b334d89bd3d998f99ccfbfa37575&query=' + keywordSearch).then((element) => {
+      const params = {
+        query: keywordSearch,
+        api_key: this.api_key
+      }
+      axios.get('https://api.themoviedb.org/3/search/movie' , {params}).then((element) => {
       this.movies = element.data.results
     })
   }
