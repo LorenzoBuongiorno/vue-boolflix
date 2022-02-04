@@ -1,32 +1,32 @@
 <template>
-    <div class="movie-card">
+    <div class="serie-card">
         <div class="description">
             <div>
                 <span>Titolo:</span>
-                {{movie.title}}
+                {{serie.name}}
             </div>
             <div>
                 <span>Titolo Originale:</span>
-                {{movie.original_title}}
+                {{serie.original_name}}
             </div>
             <div>
                 <span>Lingua:</span>
-                <img class="language-image" :src="'/flags/' + movie.original_language + '.png'" alt=""  @load="loadImage">
-                <span v-if="!isLoaded">{{movie.original_language}}</span>
+                <img class="language-image" :src="'/flags/' + serie.original_language + '.png'" alt=""  @load="loadImage">
+                <span v-if="!isLoaded">{{serie.original_language}}</span>
             </div>
             <div>
                 <span>Voto:</span>
-                {{movie.vote_average}}
+                {{serie.vote_average}}
             </div>
         </div>
-        <img class="poster-image" :src="'https://image.tmdb.org/t/p/original' + movie.poster_path " alt="">
+        <img class="poster-image" :src="'https://image.tmdb.org/t/p/original' + serie.backdrop_path " alt="">
     </div>
 </template>
 
 <script>
 export default {
     props:{
-        movie:Object
+        serie:Object
     },
     data() {
         return {
@@ -42,5 +42,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/style/MovieCards.scss'
+@import '@/style/SerieCards.scss'
 </style>

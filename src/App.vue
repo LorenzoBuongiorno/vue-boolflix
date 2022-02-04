@@ -2,10 +2,10 @@
   <div id="app">
     <div class="background">
       <header>
-        <input-search @search="filterMovies" />
+        <input-search @search="filterMoviesTv" />
       </header>
       <main>
-        <main-box :movies="movies" />
+        <main-box :movies="movies" :series="series"/>
       </main>
     </div>
   </div>
@@ -27,13 +27,14 @@ export default {
   data () {
     return {
       movies: [],
+      series: [],
       api_key: '3800b334d89bd3d998f99ccfbfa37575'
       
 
     }
   },
   methods: {
-    filterMovies(keywordSearch) {
+    filterMoviesTv(keywordSearch) {
       console.log(keywordSearch);
       const params = {
         query: keywordSearch,
@@ -41,6 +42,9 @@ export default {
       }
       axios.get('https://api.themoviedb.org/3/search/movie?language=it-IT&' , {params}).then((element) => {
       this.movies = element.data.results
+    });
+    axios.get('https://api.themoviedb.org/3/search/tv?language=it-IT&' , {params}).then((element) => {
+      this.series = element.data.results
     })
   }
   }
