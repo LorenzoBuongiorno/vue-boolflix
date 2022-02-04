@@ -1,5 +1,6 @@
 <template>
     <div class="serie-card">
+        <div class="cover"></div>
         <div class="description">
             <div>
                 <span>Titolo:</span>
@@ -20,7 +21,7 @@
 
             </div>
         </div>
-        <a href="#"><img class="poster-image" :src="'https://image.tmdb.org/t/p/w500/' + serie.backdrop_path " alt=""></a>
+        <img class="poster-image" :src="'https://image.tmdb.org/t/p/w342/' + serie.backdrop_path " alt="">
     </div>
 </template>
 

@@ -1,5 +1,6 @@
 <template>
     <div class="movie-card">
+        <div class="cover"></div>
         <div class="description">
             <div>
                 <span>Titolo:</span>
@@ -19,9 +20,7 @@
                 <span class="stars" v-for="n in Math.ceil(scale(movie.vote_average))" :key="n"><i class="fas fa-star"></i></span>
             </div>
         </div>
-        <a href="#">
-            <img class="poster-image" :src="'https://image.tmdb.org/t/p/w500/' + movie.poster_path " alt="">
-        </a>
+        <img class="poster-image" :src="'https://image.tmdb.org/t/p/w342/' + movie.poster_path " alt="">
     </div>
 </template>
 
@@ -42,8 +41,6 @@ export default {
             scale (number) {
     return (number - 0) * (5 - 0) / (10 - 0) + 0;
             },
-
-
     }
 }
 </script>
