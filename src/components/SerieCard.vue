@@ -12,11 +12,13 @@
             </div>
             <div>
                 <span>Lingua:</span>
+                <!-- PRINT FLAG IMAGE OR THE LANGUAGE WORD -->
                 <img class="language-image" :src="'/flags/' + serie.original_language + '.png'" alt=""  @load="loadImage">
                 <span v-if="!isLoaded">{{serie.original_language}}</span>
             </div>
             <div>
                 <span>Voto: </span>
+                <!-- PRINT STARS FOR EACH VOTE NUMBER  -->
                 <span class="stars" v-for="n in Math.ceil(scale(serie.vote_average))" :key="n"><i class="fas fa-star"></i></span>
 
             </div>
@@ -39,6 +41,7 @@ export default {
         loadImage() {
                 this.isLoaded = true;
             },
+            //SCALE VOTE FROM 1, 10 TO 1,5
             scale (number) {
                 return (number - 0) * (5 - 0) / (10 - 0) + 0;
             },

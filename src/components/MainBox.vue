@@ -9,7 +9,7 @@
     <div v-if="populars == 0 && movies != 0">
         <h1>Movies</h1>
         <div class="card-box">
-            <movie-card  v-for="movie in movies" :key="movie.id" :movie="movie"/>
+            <movie-card  v-for="movie in movies" :key="movie.id" :movie="movie" :actorsName="actorsName"/>
         </div>
     </div>
     <div v-if="populars == 0 && series != 0">
@@ -29,19 +29,20 @@ export default {
     components: {
         MovieCard,
         SerieCard,
-        PopularCard
+        PopularCard,
     },
         props: {
         movies: Array,
         series: Array,
-        populars: Array
+        populars: Array,
+        actorsName: Array
     }
 }
 </script>
 
 <style lang="scss">
 .card-box{
-    width: 1800px;
+    width: 80vw;
     overflow: scroll;
     white-space:nowrap;
     overflow-y: hidden;

@@ -12,11 +12,13 @@
             </div>
             <div>
                 <span>Lingua:</span>
+                <!-- PRINT FLAG IMAGE OR THE LANGUAGE WORD -->
                 <img class="language-image" :src="'/flags/' + popular.original_language + '.png'" alt=""  @load="loadImage">
                 <span v-if="!isLoaded">{{popular.original_language}}</span>
             </div>
             <div>
                 <span>Voto: </span>
+                <!-- PRINT STARS FOR EACH VOTE NUMBER  -->
                 <span class="stars" v-for="n in Math.ceil(scale(popular.vote_average))" :key="n"><i class="fas fa-star"></i></span>
             </div>
         </div>
@@ -38,6 +40,7 @@ export default {
         loadImage() {
                 this.isLoaded = true;
             },
+            //SCALE VOTE FROM 1, 10 TO 1,5
             scale (number) {
                 return (number - 0) * (5 - 0) / (10 - 0) + 0;
             },
@@ -46,6 +49,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import url('https://use.fontawesome.com/releases/v5.7.1/css/all.css');
 @import '@/style/MovieCards.scss'
 </style>
