@@ -41,6 +41,7 @@ export default {
   },
   methods: {
     filterMoviesTv(keywordSearch) {
+      this.populars = [];
       console.log(keywordSearch);
       const params = {
         query: keywordSearch,

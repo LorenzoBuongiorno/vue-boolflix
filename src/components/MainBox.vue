@@ -1,18 +1,22 @@
 <template>
 <div>
-    <div v-if="movies == 0 || series == 0">
+    <div v-if="movies == 0 && series == 0">
         <h1>Popular</h1>
         <div class="card-box">
             <popular-card  v-for="popular in populars" :key="popular.id" :popular="popular"/>
         </div>
     </div>
-    <h1>Movies</h1>
-    <div class="card-box">
-        <movie-card  v-for="movie in movies" :key="movie.id" :movie="movie"/>
+    <div v-if="populars == 0 && movies != 0">
+        <h1>Movies</h1>
+        <div class="card-box">
+            <movie-card  v-for="movie in movies" :key="movie.id" :movie="movie"/>
+        </div>
     </div>
-    <h1>Tv Series</h1>
-    <div class="card-box">
-        <serie-card  v-for="serie in series" :key="serie.id" :serie="serie"/>
+    <div v-if="populars == 0 && series != 0">
+        <h1>Tv Series</h1>
+        <div class="card-box">
+            <serie-card  v-for="serie in series" :key="serie.id" :serie="serie"/>
+        </div>
     </div>
 </div>
 </template>
