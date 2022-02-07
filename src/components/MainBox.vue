@@ -41,9 +41,21 @@ export default {
 
 <style lang="scss">
 .card-box{
-    width: 1500px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    width: 1800px;
+    overflow: scroll;
+    white-space:nowrap;
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+        height: 15px;
+    }
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px #444; 
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #555; 
+        border-radius: 10px;
+    }
+
 }
 </style>

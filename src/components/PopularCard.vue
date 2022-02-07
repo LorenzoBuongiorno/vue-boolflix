@@ -39,7 +39,7 @@ export default {
                 this.isLoaded = true;
             },
             scale (number) {
-    return (number - 0) * (5 - 0) / (10 - 0) + 0;
+                return (number - 0) * (5 - 0) / (10 - 0) + 0;
             },
     }
 }

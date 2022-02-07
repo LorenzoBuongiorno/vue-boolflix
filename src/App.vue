@@ -2,6 +2,7 @@
   <div id="app">
     <div class="background">
       <header>
+        <h1>BOOLFLIX</h1>
         <input-search @search="filterMoviesTv" />
       </header>
       <main>
@@ -61,22 +62,29 @@ export default {
 <style lang="scss">
 @import 'style/main.scss';
 #app{
-    background-color: #333;
+    background-color: #222;
     .background{
-    background-color: #333;
     height: 100vh;
       header{
         background-color: #111;
+        h1{
+          color: #ff0000;
+        }
+        padding: 0px 70px;
         height: 80px;
         display: flex;
-        justify-content: end;
+        justify-content: space-between;
         align-items: center;
     
       }
       main{
         display: flex;
         justify-content: center;
-        background-color: #333;
+        background-color: #222;
+        h1{
+          color: #ccc;
+          padding: 10px 20px;
+        }
       }
     }
 }
