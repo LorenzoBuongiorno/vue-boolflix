@@ -1,5 +1,11 @@
 <template>
 <div>
+    <div v-if="movies == 0 || series == 0">
+        <h1>Popular</h1>
+        <div class="card-box">
+            <popular-card  v-for="popular in populars" :key="popular.id" :popular="popular"/>
+        </div>
+    </div>
     <h1>Movies</h1>
     <div class="card-box">
         <movie-card  v-for="movie in movies" :key="movie.id" :movie="movie"/>
@@ -13,15 +19,18 @@
 
 <script>
 import MovieCard from './MovieCard.vue'
+import PopularCard from './PopularCard.vue'
 import SerieCard from './SerieCard.vue'
 export default {
     components: {
         MovieCard,
-        SerieCard
+        SerieCard,
+        PopularCard
     },
         props: {
         movies: Array,
-        series: Array
+        series: Array,
+        populars: Array
     }
 }
 </script>
