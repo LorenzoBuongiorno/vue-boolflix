@@ -6,7 +6,7 @@
         <input-search @search="filterMoviesTv" />
       </header>
       <main>
-        <main-box :movies="movies" :series="series" :populars="populars" :actorsName="actorsName"/>
+        <main-box :movies="movies" :series="series" :populars="populars" :actorsName="actorsName" :genre="genre"/>
       </main>
     </div>
   </div>
@@ -31,6 +31,7 @@ export default {
       series: [],
       populars: [],
       actorsName: [],
+      genre: [],
       api_key: '3800b334d89bd3d998f99ccfbfa37575'
       
 
@@ -39,6 +40,9 @@ export default {
   mounted () {
       axios.get('https://api.themoviedb.org/3/trending/movie/day?language=it-IT&api_key=3800b334d89bd3d998f99ccfbfa37575').then((element) => {
       this.populars = element.data.results
+    });
+    axios.get('https://api.themoviedb.org/3/genre/movie/list?language=it-IT&api_key=3800b334d89bd3d998f99ccfbfa37575').then((element) => {
+      this.genre = element.data.genres
     });
   },
   methods: {
